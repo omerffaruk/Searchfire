@@ -29,7 +29,7 @@ export default {
 <style lang="scss">
 .search {
   &__container {
-    padding: 1rem 0;
+    padding: 1.5rem 0;
   }
   &__input {
     width: 100%;

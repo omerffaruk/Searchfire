@@ -5,7 +5,7 @@
       <p class="brand">{{ product.brand }}</p>
       <p class="title">{{ product.title }}</p>
       <p class="price">
-        From <span>£{{ product.price.min }}</span>
+        From <span> £{{ product.price.min.toFixed(2) }}</span>
       </p>
     </div>
   </li>
@@ -44,7 +44,11 @@ export default {
       font-family: futura-pt;
       text-align: left;
       line-height: 21px;
+      margin-top: 0.3rem;
 
+      & > * {
+        margin: 0.3rem 0;
+      }
       .brand {
         text-transform: uppercase;
         font-size: 0.84em;

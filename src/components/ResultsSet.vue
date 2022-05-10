@@ -5,16 +5,20 @@
       :key="product.id"
       class="products__product"
     >
-      <h3>{{ product.title }}</h3>
+      <ProductCard v-if="product.in_stock" :product="product" />
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import ProductCard from "@/components/ProductCard.vue";
 
 export default {
   name: "ResultsSet",
+  components: {
+    ProductCard,
+  },
   methods: {
     ...mapActions(["fetchProducts"]),
   },

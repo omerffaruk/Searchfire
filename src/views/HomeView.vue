@@ -1,8 +1,6 @@
 <template>
-  <div class="home">
-    <SearchBar />
-    <ResultsSet />
-  </div>
+  <SearchBar />
+  <ResultsSet />
 </template>
 
 <script>

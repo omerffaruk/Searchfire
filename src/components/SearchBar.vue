@@ -1,7 +1,7 @@
 <template>
   <div class="search__container">
     <input
-      @keyup="fetchProducts(`${$event.target.value}`)"
+      @keyup="fetchAllProducts(`${$event.target.value}`)"
       type="search"
       placeholder="Search"
       v-model="search"
@@ -21,7 +21,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["fetchProducts"]),
+    ...mapActions(["fetchAllProducts"]),
   },
 };
 </script>

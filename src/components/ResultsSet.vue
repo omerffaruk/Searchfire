@@ -1,12 +1,13 @@
 <template>
   <ul class="products__container">
-    <a
+    <router-link
+      :to="{ name: `product`, params: { productid: product.id } }"
       v-for="product in allProducts"
       :key="product.id"
       class="products__product"
     >
       <ProductCard v-if="product.in_stock" :product="product" />
-    </a>
+    </router-link>
   </ul>
 </template>
 
@@ -20,11 +21,12 @@ export default {
     ProductCard,
   },
   methods: {
-    ...mapActions(["fetchProducts"]),
+    ...mapActions(["fetchAllProducts", "fetchPageProducts"]),
   },
-  computed: mapGetters(["allProducts"]),
+  computed: mapGetters(["allProducts", "pageProducts"]),
   created() {
-    this.fetchProducts();
+    this.fetchAllProducts();
+    this.fetchPageProducts();
   },
 };
 </script>
@@ -37,6 +39,7 @@ export default {
     grid-gap: 10px;
     list-style-type: none;
     padding: 0;
+
     a {
       text-decoration: none;
     }

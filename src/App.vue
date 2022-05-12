@@ -11,7 +11,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #efefef4b;
 }
 #app {
   font-family: futura-pt, Arial, sans-serif;
@@ -19,6 +18,11 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #121e28;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .main {

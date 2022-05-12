@@ -28,13 +28,19 @@ export default {
     justify-content: stretch;
     align-items: stretch;
     height: 100%;
+    padding: 0.5rem 0.5rem;
+    transition: box-shadow 0.5s ease;
+
+    &:hover {
+      box-shadow: 0 0 11px rgba(18, 18, 18, 0.2);
+    }
 
     .image {
       width: 100%;
       object-fit: contain;
       transition: transform 0.6s ease;
       &:hover {
-        transform: scale(0.95);
+        transform: scale(0.98);
       }
     }
     .info {

@@ -7,7 +7,8 @@ const fetchUrl = `${apiUrl}/searcha?client_id=${clientId}/`;
 const store = createStore({
   state: {
     products: [],
-    pageProducts: [],
+    cart: [],
+    lightScheme: true,
   },
   getters: {
     allProducts: (state) => state.products,
@@ -15,6 +16,8 @@ const store = createStore({
     getProductById: (state) => (id) => {
       return state.products.find((prod) => prod.id === id);
     },
+    getCart: (state) => state.cart,
+    getLightScheme: (state) => state.lightScheme,
   },
   actions: {
     async fetchAllProducts({ commit }, query = "", limit = 48, page = 1) {
@@ -35,6 +38,22 @@ const store = createStore({
   mutations: {
     setProducts: (state, products) => (state.products = products),
     setPageProducts: (state, products) => (state.pageProducts = products),
+    addToCart: (state, product) => {
+      const alreadyInCart = state.cart.find(
+        (prod) => prod.product.id === product.product.id
+      );
+      if (!alreadyInCart) {
+        state.cart.push(product);
+      } else {
+        state.cart = state.cart.map((prod) => {
+          if (prod.id === product.id) {
+            prod.quantity = product.quantity;
+          }
+          return prod;
+        });
+      }
+    },
+    setLightScheme: (state) => (state.lightScheme = !state.lightScheme),
   },
 });
 

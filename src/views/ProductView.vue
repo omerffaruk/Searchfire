@@ -15,7 +15,7 @@
           <button class="btn" @click="decreaseQuantity">-</button>
         </div>
         <div class="add-cart-button">
-          <button>Add to cart</button>
+          <button @click="addToCart">Add to cart</button>
         </div>
       </div>
     </div>
@@ -23,7 +23,8 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import store from "@/store/index";
+import { mapGetters } from "vuex";
 export default {
   name: "ProductView",
   props: ["productid"],
@@ -33,7 +34,14 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["fetchAllProducts"]),
+    // ...mapActions(["fetchAllProducts"]),
+    addToCart() {
+      const newCartItem = {
+        product: this.product,
+        quantity: this.quantity,
+      };
+      store.commit("addToCart", newCartItem);
+    },
     increaseQuantity() {
       this.quantity++;
     },
@@ -47,13 +55,16 @@ export default {
   },
   computed: {
     ...mapGetters(["getProductById"]),
+    // product() {
+    //   return this.getProductById(this.productid) || {};
+    // },
     product() {
-      return this.getProductById(this.productid) || {};
+      return store.getters.getProductById(this.productid) || {};
     },
   },
-  created() {
-    this.fetchAllProducts();
-  },
+  // created() {
+  //   this.fetchAllProducts();
+  // },
 };
 </script>
 
@@ -115,15 +126,14 @@ export default {
       width: 100%;
       padding: 10px 20px;
       font-size: 1rem;
-      border: 1px solid black;
-      background-color: black;
+      background-color: #e56c9f;
+      border: none;
       color: white;
       font-weight: bold;
       cursor: pointer;
 
       &:hover {
-        background-color: #1a1919;
-        color: white;
+        background-color: #e180a9;
       }
     }
   }

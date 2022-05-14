@@ -21,12 +21,13 @@ export default {
     ProductCard,
   },
   methods: {
-    ...mapActions(["fetchAllProducts", "fetchPageProducts"]),
+    ...mapActions(["fetchAllProducts"]),
   },
-  computed: mapGetters(["allProducts", "pageProducts"]),
+  computed: {
+    ...mapGetters(["allProducts", "getCart"]),
+  },
   created() {
     this.fetchAllProducts();
-    this.fetchPageProducts();
   },
 };
 </script>
@@ -36,12 +37,13 @@ export default {
   &__container {
     display: grid;
     grid-template-columns: repeat(1fr);
-    grid-gap: 10px;
+    grid-gap: 15px;
     list-style-type: none;
     padding: 0;
 
     a {
       text-decoration: none;
+      transition: box-shadow 0.5s ease;
     }
   }
 }

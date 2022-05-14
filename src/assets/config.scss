@@ -1,0 +1,15 @@
+$light-background-color: #fff;
+$dark-background-color: rgb(24, 23, 23);
+
+@function set-text-color($backgroundColor) {
+  @if (lightness($backgroundColor) > 70) {
+    @return #333;
+  } @else {
+    @return rgb(235, 233, 233);
+  }
+}
+
+@mixin set-background-color($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}

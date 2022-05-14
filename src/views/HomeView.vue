@@ -1,17 +1,14 @@
 <template>
-  <SearchBar />
   <ResultsSet />
 </template>
 
 <script>
 // @ is an alias to /src
-import SearchBar from "@/components/SearchBar.vue";
 import ResultsSet from "@/components/ResultsSet.vue";
 
 export default {
   name: "HomeView",
   components: {
-    SearchBar,
     ResultsSet,
   },
 };

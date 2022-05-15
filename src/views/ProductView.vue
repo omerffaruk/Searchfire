@@ -34,7 +34,6 @@ export default {
     };
   },
   methods: {
-    // ...mapActions(["fetchAllProducts"]),
     addToCart() {
       const newCartItem = {
         product: this.product,
@@ -55,20 +54,15 @@ export default {
   },
   computed: {
     ...mapGetters(["getProductById"]),
-    // product() {
-    //   return this.getProductById(this.productid) || {};
-    // },
     product() {
       return store.getters.getProductById(this.productid) || {};
     },
   },
-  // created() {
-  //   this.fetchAllProducts();
-  // },
 };
 </script>
 
 <style lang="scss">
+@import "../assets/config.scss";
 .product-page-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -126,14 +120,14 @@ export default {
       width: 100%;
       padding: 10px 20px;
       font-size: 1rem;
-      background-color: #e56c9f;
+      background-color: $button-background-color;
       border: none;
-      color: white;
+      color: $button-text-color;
       font-weight: bold;
       cursor: pointer;
 
       &:hover {
-        background-color: #e180a9;
+        background-color: $button-hover-background-color;
       }
     }
   }
@@ -144,12 +138,12 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: $button-background-color;
   border-radius: 24px;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
     rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
-  color: #3c4043;
+  color: $button-text-color;
   cursor: pointer;
   font-family: "Google Sans", Roboto, Arial, sans-serif;
   font-size: 14px;
@@ -161,8 +155,8 @@ export default {
 }
 
 .btn:hover {
-  background: #f6f9fe;
-  color: #174ea6;
+  background: $button-hover-background-color;
+  color: $button-text-color;
   cursor: pointer;
 }
 

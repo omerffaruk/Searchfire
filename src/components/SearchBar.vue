@@ -4,7 +4,6 @@
       @keyup="fetchAllProducts(`${$event.target.value}`)"
       type="search"
       placeholder="Search"
-      v-model="search"
       class="search__input"
     />
   </div>

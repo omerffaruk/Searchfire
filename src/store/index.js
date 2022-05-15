@@ -53,6 +53,11 @@ const store = createStore({
         });
       }
     },
+    removeItemFromCart: (state, product) => {
+      state.cart = state.cart.filter(
+        (prod) => prod.product.id !== product.product.id
+      );
+    },
     setLightScheme: (state) => (state.lightScheme = !state.lightScheme),
   },
 });

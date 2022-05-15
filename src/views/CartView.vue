@@ -50,12 +50,11 @@ export default {
       }, 0);
     },
     totalPrice() {
-      return this.getCart.reduce((total, cartProduct) => {
-        return (
-          total +
-          cartProduct.product.price.min * cartProduct.quantity
-        ).toFixed(2);
-      }, 0);
+      return this.getCart
+        .reduce((total, cartProduct) => {
+          return total + cartProduct.product.price.min * cartProduct.quantity;
+        }, 0)
+        .toFixed(2);
     },
     deliveryPrice() {
       return (this.totalPrice > 100 ? 0 : 8).toFixed(2);

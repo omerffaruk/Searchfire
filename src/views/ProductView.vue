@@ -45,10 +45,10 @@ export default {
       this.quantity++;
     },
     decreaseQuantity() {
-      if (this.quantity > 0) {
+      if (this.quantity > 1) {
         this.quantity--;
       } else {
-        this.quantity = 0;
+        this.quantity = 1;
       }
     },
   },

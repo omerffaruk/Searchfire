@@ -1,5 +1,8 @@
 $light-background-color: #fff;
 $dark-background-color: rgb(24, 23, 23);
+$button-background-color: #e56c9f;
+$button-hover-background-color: #e180a9;
+$button-text-color: #fff;
 
 @function set-text-color($backgroundColor) {
   @if (lightness($backgroundColor) > 70) {

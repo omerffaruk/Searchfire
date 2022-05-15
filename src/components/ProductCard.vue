@@ -28,6 +28,7 @@ export default {
     justify-content: stretch;
     align-items: stretch;
     height: 100%;
+    padding: 0 8px;
     transition: box-shadow 0.5s ease;
 
     &:hover {
@@ -46,7 +47,6 @@ export default {
       width: 100%;
       height: 100%;
       padding-right: 0.6rem;
-      font-family: futura-pt;
       text-align: left;
       line-height: 21px;
       margin-top: 0.3rem;

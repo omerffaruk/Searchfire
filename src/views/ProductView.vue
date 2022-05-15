@@ -10,12 +10,14 @@
       <p>{{ product.in_stock ? "Available" : "Currently not in stock" }}</p>
       <div class="button-container">
         <div class="plus-minus-amount">
-          <button class="btn" @click="increaseQuantity">+</button>
-          <p class="quantity">{{ quantity }}</p>
           <button class="btn" @click="decreaseQuantity">-</button>
+          <p class="quantity">{{ quantity }}</p>
+          <button class="btn" @click="increaseQuantity">+</button>
         </div>
         <div class="add-cart-button">
-          <button @click="addToCart">Add to cart</button>
+          <router-link to="/cart">
+            <button @click="addToCart">Add to cart</button>
+          </router-link>
         </div>
       </div>
     </div>
@@ -83,7 +85,6 @@ export default {
     width: 80%;
     max-width: 460px;
     margin: 10px auto 0;
-    font-family: future-pt;
 
     & > * {
       margin: 0.5rem 0;
@@ -113,7 +114,7 @@ export default {
         font-size: 1rem;
       }
     }
-    .add-cart-button > button {
+    .add-cart-button > a > button {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -145,7 +146,6 @@ export default {
     rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
   color: $button-text-color;
   cursor: pointer;
-  font-family: "Google Sans", Roboto, Arial, sans-serif;
   font-size: 14px;
   font-weight: 500;
   height: 48px;

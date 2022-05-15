@@ -1,23 +1,23 @@
 <template>
-  <div className="cart-item">
+  <div class="cart-item">
     <router-link
       :to="{ name: `product`, params: { productid: cartProduct.product.id } }"
     >
-      <div className="cart-item-img-container">
+      <div class="cart-item-img-container">
         <img
           :src="cartProduct.product.image_url"
           alt="cartProduct.product.title"
-          className="cart-item-img"
+          class="cart-item-img"
         />
       </div>
     </router-link>
-    <div className="cart-item-explanations">
-      <p>{{ cartProduct.product.brand }}</p>
+    <div class="cart-item-explanations">
+      <p class="brand">{{ cartProduct.product.brand }}</p>
       <p>{{ cartProduct.product.title }}</p>
       <p>£{{ cartProduct.product.price.min.toFixed(2) }}</p>
       <p>Quantity: {{ cartProduct.quantity }}</p>
     </div>
-    <button @click="removeFromCart" className="cart-item-close">X</button>
+    <button @click="removeFromCart" class="cart-item-close">X</button>
   </div>
 </template>
 
@@ -41,9 +41,9 @@ export default {
   display: grid;
   grid-auto-columns: 1fr;
   grid-gap: 1rem;
-  box-shadow: 2px 2px 10px darkgray;
 }
 .cart-item {
+  box-shadow: 2px 2px 10px darkgray;
   border: 1px solid lightgray;
   display: grid;
   grid-template-columns: 1fr;
@@ -67,7 +67,10 @@ export default {
 .cart-item-explanations p {
   font-weight: 300;
   text-transform: uppercase;
-  font-style: italic;
+}
+.cart-item-explanations .brand {
+  letter-spacing: 0.07em;
+  font-weight: bold;
 }
 .cart-item-explanations .price {
   font-weight: 500;

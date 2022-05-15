@@ -67,7 +67,7 @@ export default {
   @include set-background-color($dark-background-color);
 }
 #app {
-  font-family: futura-pt, Arial, sans-serif;
+  font-family: "Work Sans", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -109,6 +109,7 @@ header img {
 
 .main {
   min-height: 100vh;
+  margin-bottom: 2rem;
 }
 
 /* clears the ‘X’ from Internet Explorer */

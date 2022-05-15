@@ -1,32 +1,32 @@
 <template>
-  <section v-if="getCart.length > 0" className="cart-page">
-    <article className="cart-header">
+  <section v-if="getCart.length > 0" class="cart-page">
+    <article class="cart-header">
       <h2>Your Bag</h2>
       <p>Items in your bag are not reserved.</p>
     </article>
-    <article className="cart-items-container">
+    <article class="cart-items-container">
       <template v-for="cartProduct in getCart" :key="cartProduct.product.id">
         <CartProduct :cartProduct="cartProduct" />
       </template>
     </article>
-    <article className="cart-summary">
-      <p className="summary">Order Summary</p>
-      <div className="amount">
+    <article class="cart-summary">
+      <p class="summary">Order Summary</p>
+      <div class="amount">
         <p>{{ totalItems }} {{ totalItems > 1 ? "items" : "item" }}</p>
         <p>£ {{ totalPrice }}</p>
       </div>
-      <div className="cart-summary-delivery">
+      <div class="cart-summary-delivery">
         <p>Delivery</p>
         <p>{{ deliveryPrice === "0.00" ? "FREE" : deliveryPrice }}</p>
       </div>
-      <div className="cart-summary-total">
+      <div class="cart-summary-total">
         <p>TOTAL</p>
         <p>£ {{ total }}</p>
       </div>
     </article>
-    <button className="checkout-btn">CHECKOUT</button>
+    <button class="checkout-btn">CHECKOUT</button>
     <router-link to="/">
-      <button className="checkout-btn continue">Continue to Shopping</button>
+      <button class="checkout-btn continue">Continue to Shopping</button>
     </router-link>
   </section>
   <section v-else>
@@ -77,7 +77,6 @@ export default {
   grid-gap: 1rem;
   margin: auto;
   max-width: 1440px;
-  font-family: "Montserrat", sans-serif;
 }
 .cart-header h2 {
   font-size: 1.5rem;

@@ -103,6 +103,10 @@ header img {
   margin: auto 0;
 }
 
+.icons > *:last-child {
+  margin-bottom: 0.3rem;
+}
+
 .main {
   min-height: 100vh;
 }
